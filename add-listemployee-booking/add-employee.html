@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add Booking Office</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/dataTables.bootstrap5.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <link rel="stylesheet" href="./css/style.css" />
+</head>
+
+<body>
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg bg-light fixed-top border-bottom">
+        <div class="container-fluid">
+            <!-- offcanvas trigger -->
+            <button class="navbar-toggler me-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <i class="bi bi-list" data-bs-target="#offcanvasExample"></i>
+            </button>
+            <!-- offcanvas trigger -->
+            <a class="navbar-brand me-auto text-black-50" href="#">
+                <span class="me-2">
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                </span>
+                <span> Employee </span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation"><i class="bi bi-list"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav d-flex ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item accordion">
+                        <a class="nav-link active" href="#">Welcome ksajd</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">
+                            <span class="me-2">
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                              
+                            </span>
+                            <span> Logout </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- navbar -->
+
+    <!-- offcanvas -->
+    <div class="offcanvas offcanvas-start bg-light sidebar-nav" tabindex="-1" id="offcanvasExample"
+        aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-body p-0">
+            <nav class="navbar-light">
+                <ul class="navbar-nav">
+                    <li>
+                        <a href="#" class="nav-link px-3 active">
+                            <span class="me-2"><i class="fa fa-tachometer" aria-hidden="true"></i></span>
+                            <span> Dashboard </span>
+                        </a>
+                    </li>
+                    <li class="my-0">
+                        <hr class="dropdown-divider bg-light" />
+                    </li>
+                    <li>
+                        <a class="nav-link px-3 sidebar-link" data-bs-toggle="collapse" href="#carManager">
+                            <span class="me-2"><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
+                            <span>Employee manager</span>
+                            <span class="ms-auto">
+                                <span class="right-icon">
+                                    <i class="bi bi-chevron-left"></i>
+                                </span>
+                            </span>
+                        </a>
+                        <div class="collapse show" id="carManager">
+                            <ul class="navbar-nav ps-3">
+                                <li>
+                                    <a href="car_list.html" class="nav-link px-3">
+                                        <span class="me-2"><i class="bi bi-list-ul"></i></span>
+                                        <span>Employee list</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="add_car.html" class="nav-link px-3 choosing">
+                                        <span class="me-2"><i class="bi bi-plus"></i></span>
+                                        <span>Add Employee</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="my-0">
+                        <hr class="dropdown-divider bg-light" />
+                    </li>
+                    <li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <!-- offcanvas -->
+
+    <!-- main -->
+    <main class="mt-5 pt-3">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class=" mb-12">
+                        <div class="card-header bg-body">
+                            <div class="col-md-12 fs-2">Add Employee</div>
+                        </div>
+                        <div class="card-body">
+                            <p class="card-text">
+                            <form class="row g-3 needs-validation" novalidate action="#">
+                                <div class="mb-3 row mt-5 fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap;">Full Name <span class="text-danger">(*)</span></label>
+                                    <div class="col-sm-5">
+                                        <input type="text" placeholder="Enter full name" class="form-control " id="inputFullName" maxlength="50" required>
+                                        <div class="invalid-feedback">Please Enter a Fullname.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row  fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap; ">Phone Number <span class="text-danger">(*)</span></label>
+                                    <div class="col-sm-5">
+                                        <input type="text" placeholder="Enter phone number" class="form-control" id="inputPhoneNumber" required maxlength="50">
+                                        <div class="invalid-feedback">Please Enter a Phone Number.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap;">Date of birth <span class="text-danger">(*)</span></label>
+                                    <div class="col-sm-5">
+                                        <input type="date" class="form-control" id="inputDob" required>
+                                        <div class="invalid-feedback">Please Choose a DateofBirth.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap;">Sex <span class="text-danger">(*)</span></label>
+                                    
+                                    <div class="col-sm-5">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+                                            <label class="form-check-label" for="inlineRadio1">Male</label>
+                                     
+                                          </div>
+                                          <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                                            <label class="form-check-label" for="inlineRadio2">Female</label>
+                                          
+                                          </div>
+                                        
+                                    </div>
+                                    <div class="invalid-feedback">Please Enter a Sex.</div>
+                                </div>
+                                <div class="mb-3 row fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap;">Address </label>
+                                    <div class="col-sm-5">
+                                        <input type="text" placeholder="Enter address" class="form-control" id="inputAddress">
+                                        
+                                    </div>
+                                </div>
+                                <div class="mb-3 row fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap;">Email </label>
+                                    <div class="col-sm-5">
+                                        <input type="email" placeholder="Enter Email" class="form-control" id="inputEmail" required maxlength="50">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap;">Account <span class="text-danger">(*)</span></label>
+                                    <div class="col-sm-5">
+                                        <input type="text" placeholder="Enter Account" class="form-control" id="inputAccount" required maxlength="50">
+                                        <div class="invalid-feedback">Please Enter Account.</div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap;">Password <span class="text-danger">(*)</span></label>
+                                    <div class="col-sm-5">
+                                        <input type="password" placeholder="Enter password" class="form-control" id="inputPassword" name="inputPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+                                        <div class="invalid-feedback">Please Enter Password.</div>
+                                        <div id="messagesss" name="messagesss" style="display:none ;">
+                                            <p>Password must contain the following:</p>
+                                            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                            <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                            <p id="number" class="invalid">A <b>number</b></p>
+                                            <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+                                          </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row fw-bold">
+                                    <label class="col-sm-2 col-form-label col-2" style="min-width: 160px; white-space: nowrap;">Department <span class="text-danger">(*)</span></label>
+                                    <div class="col-sm-5">
+                                        <select class="form-select">
+                                            <option value="" selected>Employee</option>
+                                            <option value="">Customer</option>
+                                          </select>
+                                          <div class="invalid-feedback">Please Choose Department.</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="row mt-5 mb-3">
+                                    <div class="col-sm-8 text-center">
+                                        <!-- back -->
+                                        <a href="#" id="backBtn" type="button" class="btn btn-info me-2">
+                                            <i class="bi bi-skip-backward-fill"> </i> Back
+                                        </a>
+                        
+                                        <!-- reset -->
+                                        <button type="reset" class="btn btn-warning me-2">
+                                            <i class="bi bi-arrow-counterclockwise"></i> Reset
+                                        </button>
+                        
+                                        <!-- add -->
+                                        <button type="submit" class="btn btn-success">
+                                            <i class="fa fa-plus" aria-hidden="true"></i> Add
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </main>
+    <!-- main -->
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/jquery.dataTables.min.js"></script>
+    <script src="./js/dataTables.bootstrap5.min.js"></script>
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
